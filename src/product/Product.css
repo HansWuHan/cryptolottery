@@ -1,0 +1,11 @@
+.list-group-item.product-item {
+    color: white;
+    background-color: #282c34;
+}
+
+
+.product-item.list-group-item.active {
+    color: white;
+    border-color: #282c34;
+    background-color: darkslateblue;
+}

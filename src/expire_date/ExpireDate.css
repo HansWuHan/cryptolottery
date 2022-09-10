@@ -1,0 +1,11 @@
+.expire-rate-item.list-group-item {
+    color: white;
+    background-color: #282c34;
+}
+
+
+.expire-rate-item.list-group-item.active {
+    color: white;
+    border-color: #282c34;
+    background-color: darkslateblue;
+}
