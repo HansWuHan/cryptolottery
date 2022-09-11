@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './home/Home';
 import reportWebVitals from './reportWebVitals';
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga4";
 
 
-const TRACKING_ID = "G-3PW17MD1ZY"; // OUR_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
+ReactGA.initialize("G-3PW17MD1ZY");
+ReactGA.send("pageview");
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

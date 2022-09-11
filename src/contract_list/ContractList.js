@@ -5,22 +5,23 @@ import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import ListGroup from 'react-bootstrap/ListGroup';
-import GaEventTracker from '../google_analytics/GoogleAnalytics';
 
-
+import ReactGA from "react-ga4";
 
 import './ContractList.css';
 import '../style/style.css';
 
 function ContractItem(props) {
-    const gaEventTracker = GaEventTracker('bet');
     const prefix = props.type === 'bullish' ? 'Over' : 'Below';
     return (<ListGroup.Item className='primary-style'>
         <Container>
             <Row>
                 <Col> {prefix} {props.price}</Col>
                 <Col> 1 : {props.returns}</Col>
-                <Col> <Button variant="success" onClick={() => gaEventTracker('bet')}><div className='mx-3'>Bet</div></Button>
+                <Col> <Button variant="success" onClick={() => ReactGA.event({
+                    category: "contract",
+                    action: "bet",
+                })}><div className='mx-3'>Bet</div></Button>
                 </Col>
             </Row>
         </Container>
@@ -31,7 +32,6 @@ function ContractItem(props) {
 
 function ContractItemSet(props) {
     var listItems = []
-    console.log(props.priceReturns);
     for (let i in props.priceReturns) {
         listItems.push(<ContractItem type={props.type} price={props.priceReturns[i][0]} returns={props.priceReturns[i][1]} />);
     }
