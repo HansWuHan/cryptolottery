@@ -5,19 +5,22 @@ import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import ListGroup from 'react-bootstrap/ListGroup';
+import GaEventTracker from '../google_analytics/GoogleAnalytics';
+
 
 
 import './ContractList.css';
 import '../style/style.css';
 
 function ContractItem(props) {
-    const prefix = props.type == 'bullish' ? 'Over' : 'Below';
+    const gaEventTracker = GaEventTracker('bet');
+    const prefix = props.type === 'bullish' ? 'Over' : 'Below';
     return (<ListGroup.Item className='primary-style'>
         <Container>
             <Row>
                 <Col> {prefix} {props.price}</Col>
                 <Col> 1 : {props.returns}</Col>
-                <Col> <Button variant="success"><div className='mx-3'>Bet</div></Button>
+                <Col> <Button variant="success" onClick={() => gaEventTracker('bet')}><div className='mx-3'>Bet</div></Button>
                 </Col>
             </Row>
         </Container>
