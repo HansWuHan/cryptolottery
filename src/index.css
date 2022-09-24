@@ -1,20 +1,22 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+/* override bootstrap golbal variables to make global style */
+:root {
+  --bs-body-font-family: "Poppins" !important;
+  --primary-color: #9D47E0;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
-
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.primary-style {
+  color: white !important;
+  background-color: #282c34 !important;
 }
 
-#root {
-  background-color: #282c34;
 
+.btn.btn-tertiary {
+  color: var(--primary-color);
+}
+
+.btn.btn-tertiary {
+  color: var(--primary-color);
 }

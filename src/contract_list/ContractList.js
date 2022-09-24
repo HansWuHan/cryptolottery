@@ -9,7 +9,6 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import ReactGA from "react-ga4";
 
 import './ContractList.css';
-import '../style/style.css';
 
 function ContractItem(props) {
     const prefix = props.type === 'bullish' ? 'Over' : 'Below';

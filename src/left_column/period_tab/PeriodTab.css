@@ -1,0 +1,15 @@
+.period-tab.nav-pills .nav-item button {
+    color: #7C7C85;
+    font-size: 14px;
+    font-weight: 600;
+    width: 32px;
+    border-radius: 4px;
+    padding: 2px 4px 2px 4px;
+    margin-inline: 4px;
+}
+
+.period-tab.nav-pills .nav-item button.active {
+    color: white;
+    background-color: var(--primary-color);
+    font-size: 14px;
+}

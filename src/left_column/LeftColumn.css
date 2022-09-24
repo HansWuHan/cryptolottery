@@ -1,0 +1,14 @@
+.left-column {
+    background: #F7F7FC;
+    padding-left: 32px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #363640;
+    padding-top: 40px;
+    padding-bottom: 18px;
+    text-align: start;
+}

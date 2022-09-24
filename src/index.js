@@ -4,6 +4,7 @@ import './index.css';
 import Home from './home/Home';
 import reportWebVitals from './reportWebVitals';
 import ReactGA from "react-ga4";
+import "@fontsource/poppins";
 
 
 ReactGA.initialize("G-3PW17MD1ZY");

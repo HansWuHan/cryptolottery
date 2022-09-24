@@ -3,32 +3,27 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 import TopMenu from '../top_menu/TopMenu';
-import Product from '../product/Product';
-import ExpireDateComponent from '../expire_date/ExpireDate';
+import LeftColumn from '../left_column/LeftColumn';
 import ContractListComponent from '../contract_list/ContractList';
 
-
-
 import './Home.css';
-import '../style/style.css';
 
 
 function Home() {
   return (
     <div className="App">
       <Container>
-        <Row className='justify-content-start'>
-          <TopMenu />
-        </Row>
         <Row>
-          <Col className='col-2'>
-            <Product />
+          <Col className='col-3'>
+            <LeftColumn />
           </Col>
-          <Col className='col-2'>
-            <ExpireDateComponent />
-          </Col>
-          <Col className='col-8'>
-            <ContractListComponent />
+          <Col className='col-9'>
+            <Row className='justify-content-start'>
+              <TopMenu />
+            </Row>
+            <Row>
+              <ContractListComponent />
+            </Row>
           </Col>
         </Row>
       </Container>
