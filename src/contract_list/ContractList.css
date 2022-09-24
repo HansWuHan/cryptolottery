@@ -1,9 +1,3 @@
-.nav-pills .nav-item button.active {
-    color: white;
-    border-color: darkslateblue;
-    background-color: darkslateblue;
-}
-
 .nav-pills .nav-item button {
     color: white;
 }

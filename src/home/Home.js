@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 
 import TopMenu from '../top_menu/TopMenu';
 import LeftColumn from '../left_column/LeftColumn';
-import ContractListComponent from '../contract_list/ContractList';
+import BetPanel from '../bet_panel/BetPanel';
 
 import './Home.css';
 
@@ -22,7 +22,7 @@ function Home() {
               <TopMenu />
             </Row>
             <Row>
-              <ContractListComponent />
+              <BetPanel />
             </Row>
           </Col>
         </Row>

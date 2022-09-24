@@ -1,6 +1,9 @@
 import Container from 'react-bootstrap/Container';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import { useSelector } from 'react-redux'
+
+
 
 import './BetPanel.css';
 
@@ -11,10 +14,10 @@ const OptionType = Object.freeze({
 
 
 function BetPanel(props) {
-
+    const activeOptionDate = useSelector((state) => state.OptionDate.activeOptionDate)
     return (
         <Container>
-            <div></div>
+            <div> {activeOptionDate.product}   </div>
             <Tabs
                 defaultActiveKey="bullish"
                 id="uncontrolled-tab-example"
@@ -24,10 +27,8 @@ function BetPanel(props) {
             >
                 <Tab eventKey="bullish" title="Bullish" className="mb-3 primary-style"
                 >
-                    <ContractItemSet type="bullish" priceReturns={bullishPriceReturns} />
                 </Tab>
                 <Tab eventKey="bearish" title="Bearish" className="mb-3 primary-style">
-                    <ContractItemSet type="bearish" priceReturns={bearishhPriceReturns} />
                 </Tab>
             </Tabs>
         </Container>
