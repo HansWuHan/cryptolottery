@@ -1,0 +1,54 @@
+.table-title {
+    color: #7C7C85;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+th:first-child {
+    text-align: start;
+}
+
+th:last-child {
+    text-align: end;
+}
+
+.table>:not(:first-child).option-list-items {
+    border-top: 0;
+}
+
+.option-name {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: start;
+    vertical-align: middle;
+}
+
+.odd {
+    font-weight: 500;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.bet-button-set {
+    text-align: end;
+    vertical-align: middle;
+}
+
+.bet-button.btn {
+    color: var(--primary-color);
+    border-color: transparent;
+    background-color: #f6f6fc;
+    margin-inline: 1px;
+    width: 64px;
+    font-size: 14px;
+}
+
+.bet-button.btn:hover,
+.bet-button.btn:active,
+.bet-button.btn:focus,
+.bet-button.btn:focus-visible {
+    color: white;
+    background-color: var(--primary-color);
+    border-color: transparent;
+    box-shadow: none;
+}

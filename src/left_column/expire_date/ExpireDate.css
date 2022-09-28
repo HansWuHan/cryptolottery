@@ -1,13 +1,26 @@
 .expire-rate-item.nav-item {
     font-size: 16px;
     line-height: 24px;
-    color: #363640;
+    color: var(--secondary-color);
     text-align: left;
+    vertical-align: baseline;
     height: 40px;
+    cursor: pointer;
 }
 
 
 .expire-rate-item.nav-item.active {
     color: var(--primary-color);
     font-weight: 600;
+}
+
+.expire-rate-item.nav-item span {
+    margin-left: -10px;
+    padding: 10px;
+}
+
+
+.expire-rate-item.nav-item.active span {
+    background-color: #E9E6F0;
+    border-radius: 20px;
 }

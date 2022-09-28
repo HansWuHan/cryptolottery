@@ -1,9 +1,13 @@
-.nav-pills .nav-item button.active {
-    color: white;
-    border-color: darkslateblue;
-    background-color: darkslateblue;
+.bet-panel-title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: baseline;
+    font-size: 28px;
+    margin-bottom: 24px;
 }
 
-.nav-pills .nav-item button {
-    color: white;
+.bet-panel-title .product {
+    font-weight: 600;
+    margin-inline-end: 6px;
 }

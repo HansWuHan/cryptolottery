@@ -2,21 +2,31 @@
 :root {
   --bs-body-font-family: "Poppins" !important;
   --primary-color: #9D47E0;
+  --secondary-color: #363640;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.primary-style {
-  color: white !important;
-  background-color: #282c34 !important;
+html,
+body,
+#root,
+#app>div {
+  height: 100%
 }
 
-
-.btn.btn-tertiary {
-  color: var(--primary-color);
+.nav.nav-tabs .nav-link {
+  color: var(--secondary-color);
+  font-size: 18px;
+  font-weight: 500;
+  border: 0;
 }
 
-.btn.btn-tertiary {
+.nav.nav-tabs .nav-link.active {
   color: var(--primary-color);
+  font-weight: 600;
+  border: 0;
+  border-bottom: 2px solid var(--primary-color);
+  /* override the bs style*/
+  margin-bottom: 0px;
 }

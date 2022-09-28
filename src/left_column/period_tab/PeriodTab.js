@@ -6,14 +6,17 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
 
-function PeriodTab() {
-    const [key, setKey] = useState('1M');
-
+const tabToDays = {
+    '1M': 30,
+    '3M': 90,
+    '6M': 180,
+    '1Y': 360
+}
+function PeriodTab(props) {
     return (
         <Tabs
             id="controlled-tab-example"
-            activeKey={key}
-            onSelect={(k) => setKey(k)}
+            onSelect={(key) => props.setDisplayDays(tabToDays[key])}
             className="period-tab mb-3"
             variant='pills'
         >

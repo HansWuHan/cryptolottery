@@ -13,15 +13,15 @@ function Home() {
   return (
     <div className="App">
       <Container>
-        <Row>
+        <Row className='h-100'>
           <Col className='col-3'>
-            <LeftColumn />
+            <LeftColumn className='left-column' />
           </Col>
-          <Col className='col-9'>
-            <Row className='justify-content-start'>
+          <Col className='col-9 mt-4'>
+            <Row>
               <TopMenu />
             </Row>
-            <Row>
+            <Row className='bet-panel'>
               <BetPanel />
             </Row>
           </Col>
