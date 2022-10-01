@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { useSelector } from 'react-redux'
+import ReactGA from "react-ga4";
 
 import { OptionType, ProductMessages } from '../schema/Option'
 import { capitalize, formatDateAndTime } from '../util'

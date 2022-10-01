@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import { useSelector } from 'react-redux'
+import ReactGA from "react-ga4";
 
 import CartItem from './cart_item/CartItem'
 import './Checkout.css';
@@ -29,6 +30,15 @@ function Checkout() {
     for (let i = 0; i < cart.length; i++) {
         cartItems.push(<CartItem key={i} option={cart[i].option} odd={cart[i].odd} count={cart[i].count} />)
     }
+
+    const submit = (total) => {
+        ReactGA.event({
+            category: "cart",
+            action: "submit",
+            value: total,
+        });
+    }
+
     return (
         <div>
             <div className='cart-title'>Betslip</div>
@@ -43,7 +53,7 @@ function Checkout() {
                     <div className='left-align'>Possible winning</div>
                     <div md="auto">${calcReturn(cart)}</div>
                 </div>
-                <Button className="pay-button">Pay Now</Button>
+                <Button className="pay-button" onClick={() => submit(calcBet(cart))}>Pay Now</Button>
             </div>
         </div>)
 }

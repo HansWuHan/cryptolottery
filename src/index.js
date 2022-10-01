@@ -9,9 +9,6 @@ import "@fontsource/poppins";
 
 import './index.css';
 
-
-
-
 ReactGA.initialize("G-3PW17MD1ZY");
 ReactGA.send("pageview");
 

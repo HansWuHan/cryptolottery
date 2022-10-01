@@ -1,6 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import { useSelector, useDispatch } from 'react-redux'
+import ReactGA from "react-ga4";
+
 
 import { Option } from '../../schema/Option'
 import { addItemToCart } from '../../state/Cart'
@@ -21,8 +23,16 @@ function OptionList(props) {
     }
 
     const type = optionList.type;
-    const addItems = (price, odd, count) => dispatch(addItemToCart(
-        { option: new Option(props.product, props.date, type, price), odd: odd, count: count }));
+    const addItems = (price, odd, count) => {
+        ReactGA.event({
+            category: "bet",
+            action: "add",
+            label: props.product.description,
+            value: count,
+        });
+        dispatch(addItemToCart(
+            { option: new Option(props.product, props.date, type, price), odd: odd, count: count }))
+    };
 
     return (
         <Table responsive>
