@@ -1,3 +1,5 @@
+import { OptionType } from "./schema/Option"
+
 export const capitalize = (s) => {
     if (typeof s !== 'string') return ''
     return s.charAt(0).toUpperCase() + s.slice(1)
@@ -17,3 +19,23 @@ export const datesDifferenceInDays = (a, b) => {
     }
     throw TypeError('dates diff need to have date inputs');
 }
+
+// Format date to MMM-DD-YYYY, HH:MM
+export const formatDateAndTime = (date) => {
+    if (!(date instanceof Date)) {
+        throw TypeError('formatDateAndDate need to have date inputs');
+    }
+
+    return date.toLocaleString('en-US',
+        { day: 'numeric', year: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: false });
+}
+
+export const getOptionName = (activeOptionType, price) => {
+    switch (activeOptionType) {
+        case OptionType.Positive:
+            return 'Over $' + price;
+        case OptionType.Negative:
+            return 'Below $' + price;
+        default:
+    }
+};

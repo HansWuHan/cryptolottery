@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { Product } from '../enums'
+import { Product } from '../schema/Option'
 
 const testDate = new Date(Date.parse('Oct 3 2022 00:00:00 GMT'));
 const testDates = Array.from({ length: 18 }).map((_, index) => new Date((new Date(testDate)).setDate(testDate.getDate() + 7 * index)));

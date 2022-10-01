@@ -1,0 +1,58 @@
+.cart-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: start;
+}
+
+.summary {
+    margin-inline: 32px;
+    margin-block: 16px;
+}
+
+.bet-summary {
+    display: flex;
+    flex-direction: row;
+
+    font-size: 18px;
+    font-weight: 600;
+    color: #363640;
+}
+
+.return-summary {
+    display: flex;
+    flex-direction: row;
+
+    font-size: 14px;
+    font-weight: 400;
+    color: #7C7C85;
+}
+
+.left-align {
+    text-align: left;
+    margin-right: auto;
+}
+
+.pay-button.btn {
+    color: white;
+    background-color: var(--primary-color);
+    border-color: transparent;
+    box-shadow: none;
+
+    margin-top: 16px;
+    border-radius: 8px;
+    padding-block: 10px;
+    width: 336px;
+
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.pay-button.btn:hover,
+.pay-button.btn:active,
+.pay-button.btn:focus,
+.pay-button.btn:focus-visible {
+    color: white;
+    background-color: var(--primary-color);
+    border-color: transparent;
+    box-shadow: none;
+}

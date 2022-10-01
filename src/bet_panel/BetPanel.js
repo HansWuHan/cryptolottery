@@ -4,8 +4,8 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { useSelector } from 'react-redux'
 
-import { OptionType, ProductMessages } from '../enums'
-import { capitalize } from '../util'
+import { OptionType, ProductMessages } from '../schema/Option'
+import { capitalize, formatDateAndTime } from '../util'
 
 import OptionList from './option_list/OptionList';
 import './BetPanel.css';
@@ -33,7 +33,7 @@ function BetPanel(props) {
                     {ProductMessages.get(activeOptionDate.product)}
                 </div>
                 <div className='date'>
-                    {activeOptionDate.date.toLocaleString()}
+                    {formatDateAndTime(activeOptionDate.date)}
                 </div>
             </div>
             <Tabs
@@ -42,7 +42,7 @@ function BetPanel(props) {
             >
                 {optionTypeTabs}
             </Tabs>
-            <OptionList activeOptionType={activeTab}></OptionList>
+            <OptionList product={activeOptionDate.product} type={activeTab} date={activeOptionDate.date}></OptionList>
         </Container >
     );
 }

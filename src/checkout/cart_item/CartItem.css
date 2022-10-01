@@ -1,0 +1,56 @@
+.cart-item-card.row {
+    box-shadow: 0px 2px 12px 0px #00000014;
+    border-radius: 8px;
+    padding-block: 14px;
+    margin-block: 16px;
+    margin-inline: 8px;
+}
+
+.cancel-button {
+    margin-inline: 8px;
+}
+
+.option-header {
+    font-size: 14px;
+    color: #363640;
+}
+
+.option-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #363640;
+}
+
+.option-odd {
+    font-size: 14px;
+    color: #7C7C85;
+}
+
+.count-input {
+    width: 48px;
+    height: 32px;
+    border: none;
+    background-color: #F7F7FC;
+    border-radius: 4px;
+
+    font-size: 14px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.count-input:focus,
+.count-input:focus-visible {
+    border: none;
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}

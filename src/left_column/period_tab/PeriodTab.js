@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 import './PeriodTab.css';
 
 import Tab from 'react-bootstrap/Tab';
@@ -15,7 +13,6 @@ const tabToDays = {
 function PeriodTab(props) {
     return (
         <Tabs
-            id="controlled-tab-example"
             onSelect={(key) => props.setDisplayDays(tabToDays[key])}
             className="period-tab mb-3"
             variant='pills'

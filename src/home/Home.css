@@ -12,3 +12,7 @@
 .left-column {
   height: 100%;
 }
+
+.top-menu {
+  margin-bottom: 32px !important;
+}

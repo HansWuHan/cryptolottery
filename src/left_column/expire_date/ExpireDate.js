@@ -24,13 +24,11 @@ function ExpireDateItem(props) {
 
 function ExpireDateComponent(props) {
     const activeOptionDate = useSelector((state) => state.OptionDate.activeOptionDate);
-    const optionDatesObjects = useSelector((state) => state.OptionDate.optionDates).filter((item) => props.product === item.product);
-    if (optionDatesObjects.length === 0) return (<div></div>);
-
-    let optionDates = optionDatesObjects[0].dates;
+    let optionDates = useSelector((state) => state.OptionDate.optionDates).find((item) => props.product === item.product);
+    if (optionDates === undefined) return (<div></div>);
 
     // Filter the dates by recent dates tab selection
-    optionDates = optionDates
+    optionDates = optionDates.dates
         .filter((date) => datesDifferenceInDays(new Date(Date.now()), date) <= props.displayDays);
 
     const listItems = optionDates.map((value) =>

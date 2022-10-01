@@ -4,7 +4,7 @@ import './LeftColumn.css';
 
 import PeriodTab from './period_tab/PeriodTab';
 import ExpireDate from './expire_date/ExpireDate';
-import { Product } from '../enums'
+import { Product } from '../schema/Option'
 
 
 

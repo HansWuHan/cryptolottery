@@ -11,3 +11,7 @@
     font-weight: 600;
     margin-inline-end: 6px;
 }
+
+td.shrink {
+    white-space: nowrap
+}

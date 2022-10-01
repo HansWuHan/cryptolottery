@@ -5,9 +5,8 @@ import Row from 'react-bootstrap/Row';
 import TopMenu from '../top_menu/TopMenu';
 import LeftColumn from '../left_column/LeftColumn';
 import BetPanel from '../bet_panel/BetPanel';
-
+import Checkout from '../checkout/Checkout';
 import './Home.css';
-
 
 function Home() {
   return (
@@ -18,11 +17,16 @@ function Home() {
             <LeftColumn className='left-column' />
           </Col>
           <Col className='col-9 mt-4'>
-            <Row>
+            <Row className='top-menu' >
               <TopMenu />
             </Row>
             <Row className='bet-panel'>
-              <BetPanel />
+              <Col>
+                <BetPanel />
+              </Col>
+              <Col className='checkout' md="auto">
+                <Checkout />
+              </Col>
             </Row>
           </Col>
         </Row>

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { Product, OptionType } from '../enums'
+import { Product, OptionType } from '../schema/Option'
 
 const testPositiveList = [
     { price: 20000, odd: 1.5 },
@@ -34,20 +34,20 @@ export const OptionListSlice = createSlice({
     name: 'OptionList',
     initialState: {
         loading: false,
-        product: Product.Bitcoin,
-        optionDate: Date.parse('24 Sep 2022 00:00:00 GMT'),
         values: [{
+            product: Product.Bitcoin,
+            optionDate: Date.parse('24 Sep 2022 00:00:00 GMT'),
             type: OptionType.Positive,
             value: testPositiveList
         }, {
+            product: Product.Bitcoin,
+            optionDate: Date.parse('24 Sep 2022 00:00:00 GMT'),
             type: OptionType.Negative,
             value: testNegativeList
         }],
     },
     reducers: {
         setOptionList: (state, action) => {
-            state.product = action.payload.product;
-            state.optionDate = action.payload.product;
             state.values = action.payload.values;
         }
     },
