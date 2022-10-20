@@ -1,0 +1,43 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  width: 50%;
+}
+
+.text {
+  font-size: 32px;
+  animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: .3;
+  }
+
+  40% {
+    opacity: 0.6;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: .3;
+  }
+}

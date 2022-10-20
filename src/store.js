@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 import OptionDateSlice from './state/OptionDate'
-import OptionListSlice from './state/OptionList'
+import OptionInfoListSlice from './state/OptionInfoList'
 import CartSlice from './state/Cart'
 
 
 export default configureStore({
     reducer: {
         OptionDate: OptionDateSlice,
-        OptionList: OptionListSlice,
+        OptionInfoList: OptionInfoListSlice,
         Cart: CartSlice,
     },
     middleware: getDefaultMiddleware =>

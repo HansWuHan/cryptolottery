@@ -5,9 +5,10 @@ export const capitalize = (s) => {
     return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
+// Whether 2 date objects are on the same day.
 export const datesEqual = (a, b) => {
     if (a instanceof Date && b instanceof Date) {
-        return a.getTime() === b.getTime()
+        return a.toDateString() === b.toDateString()
     }
     throw TypeError('dates equal need to have date inputs');
 }
@@ -30,12 +31,12 @@ export const formatDateAndTime = (date) => {
         { day: 'numeric', year: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: false });
 }
 
-export const getOptionName = (activeOptionType, price) => {
+export const getOptionName = (activeOptionType, strike) => {
     switch (activeOptionType) {
         case OptionType.Positive:
-            return 'Over $' + price;
+            return 'Over $' + strike;
         case OptionType.Negative:
-            return 'Below $' + price;
+            return 'Below $' + strike;
         default:
     }
 };

@@ -26,7 +26,7 @@ function CartItem(props) {
             </Col>
             <Col>
                 <Row className='option-header'>{capitalize(option.product.description)} ({formatDateAndTime(option.date)})</Row>
-                <Row className='option-title'>{getOptionName(option.type, option.price)}</Row>
+                <Row className='option-title'>{getOptionName(option.type, option.strike)}</Row>
                 <Row className='option-odd'>{props.odd.toFixed(2)}</Row>
             </Col>
             <Col md="auto" className='my-auto'>

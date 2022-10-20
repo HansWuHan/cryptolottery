@@ -1,10 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import ReactGA from "react-ga4";
 
-
-import { Option } from '../../schema/Option'
 import { addItemToCart } from '../../state/Cart'
 import { getOptionName } from '../../util'
 
@@ -12,26 +10,37 @@ import './OptionList.css';
 
 const heading = ['Options', 'Odds', 'Refill Purchase'];
 
+const sortFunctionMap = {
+    'positive': (a, b) => a.option.strike - b.option.strike,
+    'negative': (a, b) => b.option.strike - a.option.strike
+}
 
+// Input:
+// values: a list of OptionInfo to display
+// optionType: String. The active option type.
 function OptionList(props) {
     const dispatch = useDispatch()
-    const typeName = props.type !== undefined ? props.type : 'positive';
-    const optionList = useSelector((state) => state.OptionList.values)
-        .find((item) => item.type.description === typeName);
-    if (optionList === undefined) {
+    let optionInfoList = props.values;
+    if (optionInfoList === undefined || optionInfoList.length === 0) {
         return (<div></div>);
     }
 
-    const type = optionList.type;
-    const addItems = (price, odd, count) => {
+    if (sortFunctionMap[props.optionType] === undefined) {
+        throw Error('No sort function found for current option type ' + props.optionType)
+    }
+
+    optionInfoList.sort(sortFunctionMap[props.optionType]);
+
+
+    const addItems = (option, odd, count) => {
         ReactGA.event({
             category: "bet",
             action: "add",
-            label: props.product.description,
+            label: option.product.description,
             value: count,
         });
         dispatch(addItemToCart(
-            { option: new Option(props.product, props.date, type, price), odd: odd, count: count }))
+            { option: option, odd: odd, count: count }))
     };
 
     return (
@@ -44,16 +53,16 @@ function OptionList(props) {
                 </tr>
             </thead>
             <tbody className='option-list-items'>
-                {Array.from(optionList.value).map((value, index) => (
+                {Array.from(optionInfoList).map((value, index) => (
                     <tr key={index}>
-                        <td className='option-name'>{getOptionName(optionList.type, value.price)}</td>
+                        <td className='option-name'>{getOptionName(value.option.type, value.option.strike)}</td>
                         <td className='odd' md="auto">{value.odd.toFixed(2)}</td>
                         <td className='bet-button-set' md="auto">
                             <Button className="bet-button"
-                                onClick={() => addItems(value.price, value.odd, 1)}>x1</Button>
-                            <Button className="bet-button" onClick={() => addItems(value.price, value.odd, 10)}>x10</Button>
-                            <Button className="bet-button" onClick={() => addItems(value.price, value.odd, 50)}>x50</Button>
-                            <Button className="bet-button" onClick={() => addItems(value.price, value.odd, 100)}>x100</Button>
+                                onClick={() => addItems(value.option, value.odd, 1)}>x1</Button>
+                            <Button className="bet-button" onClick={() => addItems(value.option, value.odd, 10)}>x10</Button>
+                            <Button className="bet-button" onClick={() => addItems(value.option, value.odd, 50)}>x50</Button>
+                            <Button className="bet-button" onClick={() => addItems(value.option, value.odd, 100)}>x100</Button>
                         </td>
                     </tr>
                 ))}
