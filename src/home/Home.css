@@ -9,8 +9,9 @@
   height: 100%;
 }
 
-.left-column {
+.row>.left-column {
   height: 100%;
+  max-width: 250px;
 }
 
 .top-menu {

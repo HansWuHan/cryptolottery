@@ -12,7 +12,7 @@ function LeftColumn() {
     const [btcDisplayDays, setBtcDisplayDays] = useState('30');
     const [ethDisplayDays, setEthDisplayDays] = useState('30');
     return (
-        <div className='left-column'>
+        <div className='left-menu'>
             <img src={process.env.PUBLIC_URL + '/logo.svg'} alt='' className='logo' />
             <div className='title'>Bitcoin(BTC)</div>
             <PeriodTab setDisplayDays={setBtcDisplayDays} />

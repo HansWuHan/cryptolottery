@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useSelector, useDispatch } from 'react-redux'
@@ -48,26 +47,24 @@ function Home() {
   } else {
     return (
       <div className="App">
-        <Container>
-          <Row className='h-100'>
-            <Col className='col-3'>
-              <LeftColumn className='left-column' />
-            </Col>
-            <Col className='col-9 mt-4'>
-              <Row className='top-menu' >
-                <TopMenu />
-              </Row>
-              <Row className='bet-panel'>
-                <Col>
-                  <BetPanel />
-                </Col>
-                <Col className='checkout' md="auto">
-                  <Checkout />
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
+        <Row className='h-100'>
+          <Col className='left-column'>
+            <LeftColumn />
+          </Col>
+          <Col className='col-9 mt-4'>
+            <Row className='top-menu' >
+              <TopMenu />
+            </Row>
+            <Row className='bet-panel'>
+              <Col>
+                <BetPanel />
+              </Col>
+              <Col className='checkout' md="auto">
+                <Checkout />
+              </Col>
+            </Row>
+          </Col>
+        </Row>
       </div >
     );
   }
